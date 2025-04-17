@@ -54,7 +54,6 @@ const envPath = path.join(projectPath, '.env.local');
 
 if (fs.existsSync(envExamplePath)) {
   fs.copyFileSync(envExamplePath, envPath);
-  fs.unlinkSync(envExamplePath);
   console.log('✅ Environment files configured');
 }
 
