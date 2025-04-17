@@ -27,6 +27,6 @@ jobs:
           VERSION=${GITHUB_REF#refs/tags/}
           VERSION=${VERSION#v}
           pnpm version $VERSION --no-git-tag-version
-          pnpm publish
+          pnpm publish --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
