@@ -49,13 +49,14 @@ fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
 
 // Handle environment files
 console.log('🔧 Setting up environment files...');
-const envExamplePath = path.join(projectPath, '.env.local.example');
 const envPath = path.join(projectPath, '.env.local');
 
-if (fs.existsSync(envExamplePath)) {
-  fs.copyFileSync(envExamplePath, envPath);
-  console.log('✅ Environment files configured');
-}
+const envContent = `# Drizzle
+DATABASE_URL=""
+`;
+
+fs.writeFileSync(envPath, envContent);
+console.log('✅ Environment files configured');
 
 console.log(`\n✨ Success! Created ${projectName} at ${projectPath}`);
 console.log('\nInside that directory, you can run several commands:');
