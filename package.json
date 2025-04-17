@@ -28,11 +28,5 @@
   "bugs": {
     "url": "https://github.com/aaanh/next-shadcn-ts-tw-t3env-template/issues"
   },
-  "homepage": "https://github.com/aaanh/next-shadcn-ts-tw-t3env-template#readme",
-  "scripts": {
-    "prepare": "husky install"
-  },
-  "devDependencies": {
-    "husky": "^9.0.11"
-  }
+  "homepage": "https://github.com/aaanh/next-shadcn-ts-tw-t3env-template#readme"
 }
