@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: 20
       - name: Update version in package.json
-        uses: conventional-changelog/standard-version@v2
+        uses: conventional-changelog/standard-version@v1
         with:
           skip-tag: true
           release-as: ${{ github.event.release.tag_name }}
