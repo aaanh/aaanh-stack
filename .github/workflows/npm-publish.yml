@@ -18,10 +18,11 @@ jobs:
         with:
           node-version: 20
       - name: Update version in package.json
-        uses: conventional-changelog/standard-version@v1
-        with:
-          skip-tag: true
-          release-as: ${{ github.event.release.tag_name }}
+        run: |
+          # Remove 'v' prefix from tag if present
+          VERSION=${GITHUB_REF#refs/tags/}
+          VERSION=${VERSION#v}
+          npm version $VERSION --no-git-tag-version
       - name: Commit version update
         run: |
           git config --global user.name 'github-actions[bot]'
