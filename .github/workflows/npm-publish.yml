@@ -22,7 +22,6 @@ jobs:
           version: 8
       - name: Update version and publish
         run: |
-          cd template
           # Remove 'v' prefix from tag if present
           VERSION=${GITHUB_REF#refs/tags/}
           VERSION=${VERSION#v}

@@ -1,10 +1,6 @@
 {
   "name": "create-next-shadcn-ts-tw-t3env",
   "version": "0.1.0",
-  "private": true,
-  "bin": {
-    "create-next-shadcn-ts-tw-t3env": "./bin/create.js"
-  },
   "files": [
     "bin",
     "template"
