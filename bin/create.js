@@ -11,13 +11,17 @@ if (!projectName) {
   process.exit(1);
 }
 
+console.log('\n🚀 Creating your Next.js project...\n');
+
 const templatePath = path.join(__dirname, '..', 'template');
 const projectPath = path.join(process.cwd(), projectName);
 
 // Create project directory
+console.log('📁 Creating project directory...');
 fs.mkdirSync(projectPath, { recursive: true });
 
 // Copy template files
+console.log('📋 Copying template files...');
 const copyDir = (src, dest) => {
   const entries = fs.readdirSync(src, { withFileTypes: true });
 
@@ -37,19 +41,24 @@ const copyDir = (src, dest) => {
 copyDir(templatePath, projectPath);
 
 // Update package.json with project name
+console.log('📝 Updating package.json...');
 const packageJsonPath = path.join(projectPath, 'package.json');
 const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
 packageJson.name = projectName;
 fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
 
-// Remove .env.local and create .env.local.example
-fs.unlinkSync(path.join(projectPath, '.env.local'));
-fs.copyFileSync(
-  path.join(projectPath, '.env.local.example'),
-  path.join(projectPath, '.env.local')
-);
+// Handle environment files
+console.log('🔧 Setting up environment files...');
+const envExamplePath = path.join(projectPath, '.env.local.example');
+const envPath = path.join(projectPath, '.env.local');
 
-console.log(`\nSuccess! Created ${projectName} at ${projectPath}`);
+if (fs.existsSync(envExamplePath)) {
+  fs.copyFileSync(envExamplePath, envPath);
+  fs.unlinkSync(envExamplePath);
+  console.log('✅ Environment files configured');
+}
+
+console.log(`\n✨ Success! Created ${projectName} at ${projectPath}`);
 console.log('\nInside that directory, you can run several commands:');
 console.log('\n  npm run dev');
 console.log('    Starts the development server.');
