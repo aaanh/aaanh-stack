@@ -22,10 +22,14 @@ jobs:
           version: 8
       - name: Update version and publish
         run: |
-          # Remove 'v' prefix from tag if present
           VERSION=${GITHUB_REF#refs/tags/}
           VERSION=${VERSION#v}
-          pnpm version $VERSION --no-git-tag-version
+          CURRENT_VERSION=$(jq -r .version package.json)
+
+          if [ "$VERSION" != "$CURRENT_VERSION" ]; then
+            pnpm version "$VERSION" --no-git-tag-version
+          fi
+
           pnpm publish --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
