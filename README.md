@@ -1,13 +1,15 @@
-# Next.js + Shadcn UI + TypeScript + Tailwind CSS + T3 Env Template
+# AAANH Stack
 
 A modern Next.js template with Shadcn UI, TypeScript, Tailwind CSS, and T3 Env configuration.
+
+Mostly for my own but feel free to use 😁
 
 ## Usage
 
 To create a new project using this template, run:
 
 ```bash
-npm create next-shadcn-ts-tw-t3env my-app
+npm create aaanh-stack my-app
 ```
 
 This will create a new directory called `my-app` with all the necessary files and configurations.
@@ -38,12 +40,12 @@ After creating your project:
 
 3. Install dependencies:
    ```bash
-   npm install
+   pnpm install
    ```
 
 4. Start the development server:
    ```bash
-   npm run dev
+   pnpm dev
    ```
 
 5. Open [http://localhost:3000](http://localhost:3000) in your browser to see your application.
