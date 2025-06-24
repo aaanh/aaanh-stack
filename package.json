@@ -1,9 +1,9 @@
 {
-  "name": "create-next-shadcn-ts-tw-t3env",
+  "name": "create-aaanh-stack",
   "version": "0.1.4-g",
   "private": false,
   "bin": {
-    "create-next-shadcn-ts-tw-t3env": "./bin/create.js"
+    "create-aaanh-stack": "./bin/create.js"
   },
   "files": [
     "bin",
@@ -23,10 +23,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aaanh/next-shadcn-ts-tw-t3env-template.git"
+    "url": "git+https://github.com/aaanh/aaanh-stack.git"
   },
   "bugs": {
-    "url": "https://github.com/aaanh/next-shadcn-ts-tw-t3env-template/issues"
+    "url": "https://github.com/aaanh/aaanh-stack/issues"
   },
-  "homepage": "https://github.com/aaanh/next-shadcn-ts-tw-t3env-template#readme"
+  "homepage": "https://github.com/aaanh/aaanh-stack#readme"
 }
